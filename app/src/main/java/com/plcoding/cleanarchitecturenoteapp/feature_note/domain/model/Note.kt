@@ -4,6 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.plcoding.cleanarchitecturenoteapp.ui.theme.*
 
+// https://github.com/philipplackner/CleanArchitectureNoteApp/issues/6 coupling of domain layer w/ data layer
 @Entity
 data class Note(
     val title: String,
@@ -16,3 +17,6 @@ data class Note(
         val noteColors = listOf(RedOrange, LightGreen, Violet, BabyBlue, RedPink)
     }
 }
+
+
+class InvalidNoteException(message: String): Exception(message)
